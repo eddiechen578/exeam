@@ -24,12 +24,12 @@
           <entry key="css" value="1" />
           <entry key="dummy" value="7" />
           <entry key="env" value="15" />
-          <entry key="php" value="2444" />
+          <entry key="php" value="2561" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="1218" />
+          <entry key="Blade" value="1335" />
           <entry key="CSS" value="1" />
           <entry key="PHP" value="1226" />
           <entry key="PLAIN_TEXT" value="22" />
@@ -57,8 +57,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/product/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-13912">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="210">
+              <caret line="53" column="82" selection-start-line="53" selection-start-column="82" selection-end-line="53" selection-end-column="82" />
+              <folding>
+                <element signature="e#2495#2531#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,8 +113,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/product/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/product/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/footer/footer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/product/create.blade.php" />
       </list>
     </option>
   </component>
@@ -310,12 +313,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556242341883</updated>
-      <workItem from="1556242343278" duration="23647000" />
+      <workItem from="1556242343278" duration="26171000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23647000" />
+    <option name="totallyTimeSpent" value="26171000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -323,7 +326,7 @@
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16965517" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16965517" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -564,8 +567,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/product/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13912">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="210">
+          <caret line="53" column="82" selection-start-line="53" selection-start-column="82" selection-end-line="53" selection-end-column="82" />
+          <folding>
+            <element signature="e#2495#2531#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

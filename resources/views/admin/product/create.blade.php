@@ -43,7 +43,14 @@
                     </div>
                     <hr>
                     <div class="form-group">
-                        <p>副件檔案</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>副件檔案</p>
+                            </div>
+                            <div class="col-md-1 pull-right">
+                                <a href="" title="新增圖片"><i class="fa fa-plus fa-2x"></i></a>
+                            </div>
+                        </div>
                         <div class="col-md-55">
                             <div class="thumbnail">
                                 <div class="image view view-first">
@@ -51,9 +58,9 @@
                                     <div class="mask">
                                         <p>Your Text</p>
                                         <div class="tools tools-bottom">
-                                            <a href="#"><i class="fa fa-link"></i></a>
-                                            <a href="#"><i class="fa fa-pencil"></i></a>
-                                            <a href="#"><i class="fa fa-times"></i></a>
+                                            <a href="#" title="預覽圖片"><i class="fa fa-link"></i></a>
+                                            <a href="#" title="更改圖片"><i class="fa fa-pencil"></i></a>
+                                            <a href="#" title="刪除圖片"><i class="fa fa-times"></i></a>
                                         </div>
                                     </div>
                                 </div>

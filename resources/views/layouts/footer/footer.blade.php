@@ -1,8 +1,7 @@
 
 <!-- /footer content -->
-@yield('scripts')
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}" defer></script>
+{{--<script src="{{ asset('js/app.js') }}" defer></script>--}}
 <!-- jQuery -->
 <script src="{{ asset('js/vendors/jquery/dist/jquery.min.js') }}" type="48ada97e7b77cc51aa463a84-text/javascript"></script>
 <!-- Bootstrap -->
@@ -56,3 +55,4 @@ ga('send', 'pageview');
 </script>
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="48ada97e7b77cc51aa463a84-|49" defer=""></script>
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="81dea1c04f7857cd21a628e0-|49" defer=""></script>
+@yield('scripts')

@@ -197,15 +197,12 @@
 
         $('#upload').change(function () {
             let photo_index = $(this).attr('photo-index');
-            let photo_index_name = 'photo-index['+photo_index+']';
+            let photo_index_name = 'photo_index['+photo_index+']';
             let uuid = $('.col-md-55').eq(photo_index).find('img').attr('uuid');
 
             for(let pair of formData.entries()){
                 if(pair[0] === photo_index_name && pair[1] === photo_index){
                     delFiles(photo_index);
-                    newFilesAdd(photo_index, this.files[0], this.files[0].name);
-                    reader(photo_index, this.files[0]);
-                }else{
                     newFilesAdd(photo_index, this.files[0], this.files[0].name);
                     reader(photo_index, this.files[0]);
                 }

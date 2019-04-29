@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Entities\Product;
-use http\Env\Response;
 use Illuminate\Http\Request;
-
-class ProductController extends Controller
+use App\Entities\Featured;
+use File;
+class FeaturedController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('admin.product.index');
+        //
     }
 
     /**
@@ -25,7 +24,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create');
+        //
     }
 
     /**
@@ -36,23 +35,38 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = Product::create([
-           'name' => $request->name,
-           'category_id' => $request->category_id,
-           'description' => $request->description,
-           'price' => $request->price,
-        ]);
+        $id = $request->id;
 
-        return response()->json(['status' => $product->id], 200);
+        $path = public_path().'/upload/'.'product_'.$id;
+
+        if (!file_exists($path)) {
+            File::makeDirectory($path, $mode = 0777, true, true);
+        }
+
+        if($request->has('file')){
+
+            foreach($request->photo_index as $key => $val){
+                $file = $request->file[$key];
+                $file_name = $request->file_name[$key];
+                $file->move($path, $file_name);
+
+                $featured = new Featured();
+                $featured->product_id = $id;
+                $featured->name = $file_name;
+                $featured->save();
+            }
+        }
+
+        return response()->json(['status' => 'success'], 200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Entities\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
         //
     }
@@ -60,10 +74,10 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Entities\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
         //
     }
@@ -72,10 +86,10 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Entities\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -83,10 +97,10 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Entities\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
         //
     }

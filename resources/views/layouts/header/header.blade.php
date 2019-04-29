@@ -29,3 +29,4 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('css/build/css/custom.min.css') }}" rel="stylesheet">
+    @yield('styles')

@@ -21,7 +21,10 @@ Route::post('/authLogin', 'Auth\LoginController@authLogin')->name('authLogin');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function (){
     Route::get('/index', 'ProductController@index')->name('index');
+    Route::post('/product/create', 'ProductController@store')->name('product.store');
     Route::Resource('products', 'ProductController');
+    Route::post('/featured/create', 'FeaturedController@store')->name('featured.store');
     Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
 
 });

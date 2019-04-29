@@ -2,95 +2,60 @@
 
 @section('content')
     <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="x_panel">
-        <div class="x_title">
-            <h2>商品主表 <small>Custom design</small></h2>
-            <ul class="nav navbar-right panel_toolbox">
-                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li>
-                            <a href="{{route('products.create')}}">新增商品</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="clearfix"></div>
-        </div>
-
-        <div class="x_content">
-
-            <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
-
-            <div class="table-responsive">
-                <table class="table table-striped jambo_table bulk_action">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>商品主表 </h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a href="{{route('products.create')}}" title="新增商品"><i class=" fa fa-2x fa-plus-square-o"></i></a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <table id="datatable-buttons" class="table table-striped table-bordered">
                     <thead>
-                    <tr class="headings">
-                        <th>
-                            <input type="checkbox" id="check-all" class="flat">
-                        </th>
-                        <th class="column-title">Invoice </th>
-                        <th class="column-title">Invoice Date </th>
-                        <th class="column-title">Order </th>
-                        <th class="column-title">Bill to Name </th>
-                        <th class="column-title">Status </th>
-                        <th class="column-title">Amount </th>
-                        <th class="column-title no-link last"><span class="nobr">Action</span>
-                        </th>
-                        <th class="bulk-actions" colspan="7">
-                            <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
-                        </th>
+                    <tr>
+                        <th>#</th>
+                        <th>商品名稱</th>
+                        <th>商品類別</th>
+                        <th>商品價格</th>
+                        <th class="text-center">編輯</th>
+                        <th class="text-center">刪除</th>
                     </tr>
                     </thead>
-
                     <tbody>
-                    <tr class="even pointer">
-                        <td class="a-center ">
-                            <input type="checkbox" class="flat" name="table_records">
+                    @foreach($products as $key => $product)
+                    <tr>
+                        <td>{{$key+1}}</td>
+                        <td>{{$product->name}}</td>
+                        <td>鞋類</td>
+                        <td>{{$product->price}}<i class="fa fa-dollar"></i></td>
+                        <td class="text-center">
+                            <a href="{{route('products.edit', $product->slug)}}"><i class="fa fa-pencil"></i></a>
                         </td>
-                        <td class=" ">121000040</td>
-                        <td class=" ">May 23, 2014 11:47:56 PM </td>
-                        <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                        <td class=" ">John Blank L</td>
-                        <td class=" ">Paid</td>
-                        <td class="a-right a-right ">$7.45</td>
-                        <td class=" last"><a href="#">View</a>
-                        </td>
-                    </tr>
-                    <tr class="odd pointer">
-                        <td class="a-center ">
-                            <input type="checkbox" class="flat" name="table_records">
-                        </td>
-                        <td class=" ">121000039</td>
-                        <td class=" ">May 23, 2014 11:30:12 PM</td>
-                        <td class=" ">121000208 <i class="success fa fa-long-arrow-up"></i>
-                        </td>
-                        <td class=" ">John Blank L</td>
-                        <td class=" ">Paid</td>
-                        <td class="a-right a-right ">$741.20</td>
-                        <td class=" last"><a href="#">View</a>
+                        <td class="text-center">
+                            <a href=""><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
-                    <tr class="even pointer">
-                        <td class="a-center ">
-                            <input type="checkbox" class="flat" name="table_records">
-                        </td>
-                        <td class=" ">121000038</td>
-                        <td class=" ">May 24, 2014 10:55:33 PM</td>
-                        <td class=" ">121000203 <i class="success fa fa-long-arrow-up"></i>
-                        </td>
-                        <td class=" ">Mike Smith</td>
-                        <td class=" ">Paid</td>
-                        <td class="a-right a-right ">$432.26</td>
-                        <td class=" last"><a href="">View</a>
-                        </td>
-                    </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
-      </div>
     </div>
+@endsection
+@section('styles')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+@endsection
+@section('scripts')
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script>
+        $('#datatable-buttons').DataTable({
+            language: {
+                url: "{{asset('js/plug-ins/Chinese-traditional.json')}}"
+            }
+        });
+    </script>
 @endsection

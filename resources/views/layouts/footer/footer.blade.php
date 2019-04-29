@@ -39,7 +39,8 @@
 <!-- bootstrap-daterangepicker -->
 <script src="{{ asset('js/vendors/moment/min/moment.min.js') }}" type="48ada97e7b77cc51aa463a84-text/javascript"></script>
 <script src="{{ asset('js/vendors/bootstrap-daterangepicker/daterangepicker.js') }}" type="48ada97e7b77cc51aa463a84-text/javascript"></script>
-
+<script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+        crossorigin="anonymous"></script>
 <!-- Custom Theme Scripts -->
 <script src="{{ asset('js/build/js/custom.min.js') }}" type="48ada97e7b77cc51aa463a84-text/javascript"></script>
 <!-- Google Analytics -->
@@ -54,5 +55,4 @@ ga('send', 'pageview');
 
 </script>
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="48ada97e7b77cc51aa463a84-|49" defer=""></script>
-<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="81dea1c04f7857cd21a628e0-|49" defer=""></script>
 @yield('scripts')

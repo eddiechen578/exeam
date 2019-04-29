@@ -15,7 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('admin.product.index');
+        $products = Product::all();
+        return view('admin.product.index')
+              ->with('products', $products);
     }
 
     /**
@@ -38,6 +40,7 @@ class ProductController extends Controller
     {
         $product = Product::create([
            'name' => $request->name,
+           'slug' => str_slug($request->name),
            'category_id' => $request->category_id,
            'description' => $request->description,
            'price' => $request->price,
@@ -65,7 +68,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+       return view('admin.product.edit')
+             ->with('product', $product);
     }
 
     /**

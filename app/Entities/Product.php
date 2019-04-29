@@ -11,4 +11,9 @@ class Product extends Model
     public function featureds(){
         return $this->hasMany(Featured::class);
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

@@ -4,7 +4,7 @@
     <div class="col-md-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2>新增商品 <small>different form elements</small></h2>
+                <h2>編輯商品 <small>different form elements</small></h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -17,7 +17,9 @@
                     <div class="form-group">
                         <label class="control-label col-md-2 col-sm-3 col-xs-12">商品名稱</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input type="text" class="form-control" name="name" placeholder="輸入商品名稱">
+                            <input type="text" class="form-control" name="name" placeholder="輸入商品名稱"
+                                value="{{$product->name}}"
+                            >
                         </div>
                     </div>
                     <div class="form-group">
@@ -33,13 +35,15 @@
                         <label class="control-label col-md-2 col-sm-3 col-xs-12">商品說明 <span class="required">*</span>
                         </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <textarea class="form-control" rows="3" placeholder='商品說明' name="description"></textarea>
+                            <textarea class="form-control" rows="3" placeholder='商品說明' name="description">{{$product->description}}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-2 col-sm-3 col-xs-12">價格</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input type="number" name="price" id="autocomplete-custom-append" class="form-control col-md-10"/>
+                            <input type="number" name="price" id="autocomplete-custom-append" class="form-control col-md-10"
+                                value="{{$product->price}}"
+                            />
                         </div>
                     </div>
                     <hr>
@@ -57,6 +61,26 @@
                                 <input class="uploadEdit" photo-index = -1 id="upload" type="file"/>
                             </div>
                         </div>
+                        @foreach($product->featureds as  $key => $featured)
+                            <div class="col-md-55" photo-index="{{$key}}">
+                                <div class="thumbnail">
+                                    <div class="image view view-first demo-gallery">
+                                        <img style="width: 100%; height:80%;display: block;" src="{{asset('upload/product_'.$product->id.'/'.$featured->name)}}" alt="image" uuid="{{$featured->id}}"/>
+                                        <div class="mask">
+                                            <p>Your Text</p>
+                                            <div class="tools tools-bottom">
+                                                <a href="#" title="預覽圖片" onclick="preview(this)"><i class="fa fa-search"></i></a>
+                                                <a href="#" title="更改圖片" onclick="changeImg(this)"><i class="fa fa-pencil"></i></a>
+                                                <a href="#" title="刪除圖片" onclick="delImg(this)"><i class="fa fa-times"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="caption">
+                                        <p>{{$featured->name}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                         <div class="col-md-55" photo-index="-1" style="display: none">
                             <div class="thumbnail">
                                 <div class="image view view-first demo-gallery">
@@ -207,9 +231,14 @@
                     reader(photo_index, this.files[0]);
                 }
             }
-
+            if(uuid != ""){
+                delFilesForDb(uuid);
+                newFilesAdd(photo_index, this.files[0], this.files[0].name);
+                reader(photo_index, this.files[0]);
+                $('.col-md-55').eq(photo_index).find('img').attr('uuid', "");
+            }
         })
-        
+
         function changeImg(e) {
             let upload = $('#upload');
             upload.trigger('click');
@@ -227,7 +256,8 @@
             let photo_index = $(e).closest('.col-md-55').attr('photo-index');
 
             if(uuid != ""){
-
+                delFilesForDb(uuid);
+                $(e).closest('.col-md-55').hide();
             }else{
                 delFiles(photo_index);
                 $(e).closest('.col-md-55').hide();
@@ -236,13 +266,13 @@
 
         function readyURL(file){
 
-          if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
-             return alert(file.name + " is not an image");
-          }
-          cloneFeatured();
-          newFilesAdd(max, file, file.name);
-          reader(max, file);
-          max++;
+            if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+                return alert(file.name + " is not an image");
+            }
+            cloneFeatured();
+            newFilesAdd(max, file, file.name);
+            reader(max, file);
+            max++;
         }
 
         function newFilesAdd(max, file, file_name) {
@@ -259,6 +289,10 @@
             formData.delete('uuid['+photo_index+']');
         }
 
+        function delFilesForDb(uuid){
+            formData.append('file_delete['+uuid+']', uuid);
+        }
+
         function reader(max, file) {
             let reader = new FileReader();
             reader.onload = function(e) {
@@ -271,10 +305,10 @@
         }
 
         function cloneFeatured() {
-           let clone = $('.col-md-55').last().clone(true);
-           clone.insertBefore($('.col-md-55').last());
-           clone.css('display','block');
-           clone.attr('photo-index', max);
+            let clone = $('.col-md-55').last().clone(true);
+            clone.insertBefore($('.col-md-55').last());
+            clone.css('display','block');
+            clone.attr('photo-index', max);
         }
 
 
@@ -331,7 +365,6 @@
 
                 success: function(res){
                     console.log(res.status)
-                    window.location.href = "http://localhost:8080/admin/index";
                 },
 
                 error: function(xhr, status, error) {

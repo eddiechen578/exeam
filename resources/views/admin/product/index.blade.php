@@ -35,7 +35,11 @@
                             <a href="{{route('products.edit', $product->slug)}}"><i class="fa fa-pencil"></i></a>
                         </td>
                         <td class="text-center">
-                            <a href=""><i class="fa fa-trash"></i></a>
+                            <form method="POST" action="{{route('products.destroy', $product->slug)}}">
+                                @csrf
+                                {{ method_field('DELETE') }}
+                                <a href="javascript:;" onclick="parentNode.submit();" class="del"><i class="fa fa-trash"></i></a>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
@@ -52,6 +56,13 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script>
+        $(document).ready(function(){
+            $(".del").click(function(){
+                if (!confirm("確定要刪除?")){
+                    return false;
+                }
+            });
+        })
         $('#datatable-buttons').DataTable({
             language: {
                 url: "{{asset('js/plug-ins/Chinese-traditional.json')}}"

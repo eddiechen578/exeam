@@ -43,6 +43,16 @@ class FeaturedController extends Controller
             File::makeDirectory($path, $mode = 0777, true, true);
         }
 
+        if($request->has('file_delete')){
+            foreach($request->file_delete as $key => $val){
+                $featured = Featured::find($val);
+                $delName = $featured->name;
+                $featured->delete();
+
+                File::delete($path.'/'.$delName);
+            }
+        }
+
         if($request->has('file')){
 
             foreach($request->photo_index as $key => $val){

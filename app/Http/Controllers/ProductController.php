@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Entities\Product;
+use App\Entities\Featured;
+use File;
 use http\Env\Response;
 use Illuminate\Http\Request;
 
@@ -79,9 +81,16 @@ class ProductController extends Controller
      * @param  \App\Entities\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Product $product, Request $request)
     {
-        //
+        $product->name = $request->name;
+        $product->slug = str_slug($request->name);
+        $product->category_id = 1;
+        $product->description = $request->description;
+        $product->price = $request->price;
+
+        $product->save();
+        return response()->json(['status' => $product->id], 200);
     }
 
     /**
@@ -92,6 +101,10 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $delId = $product->id;
+        $product->delete();
+        Featured::where('product_id', $delId)->delete();
+        File::deleteDirectory(public_path('upload/product_'.$delId));
+        return redirect()->route('index');
     }
 }

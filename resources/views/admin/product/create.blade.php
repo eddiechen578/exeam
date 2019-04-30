@@ -82,7 +82,7 @@
                             <button id="submit" type="submit" class="btn btn-success">確定</button>
                         </div>
                         <div class="col-xs-5">
-                            <button type="button" class="btn btn-primary">取消</button>
+                            <a href="{{route('index')}}" type="button" class="btn btn-primary">取消</a>
                         </div>
                     </div>
                 </form>

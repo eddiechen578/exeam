@@ -106,7 +106,7 @@
                             <button id="submit" type="submit" class="btn btn-success">確定</button>
                         </div>
                         <div class="col-xs-5">
-                            <button type="button" class="btn btn-primary">取消</button>
+                            <a href="{{route('index')}}" type="button" class="btn btn-primary">取消</a>
                         </div>
                     </div>
                 </form>
@@ -318,9 +318,9 @@
 
             $.ajax({
 
-                type: 'POST',
+                type: 'PUT',
 
-                url: '/admin/product/create',
+                url: '/admin/products/{{$product->slug}}',
 
                 data: $('form').serialize(),
 
@@ -364,7 +364,7 @@
                 contentType: false,
 
                 success: function(res){
-                    console.log(res.status)
+                    window.location.href = "http://localhost:8080/admin/index";
                 },
 
                 error: function(xhr, status, error) {

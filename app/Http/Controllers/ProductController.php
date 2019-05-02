@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\Category;
 use App\Entities\Product;
 use App\Entities\Featured;
 use File;
@@ -29,7 +30,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create');
+        $categories = Category::all();
+        return view('admin.product.create')
+              ->with('categories', $categories);
     }
 
     /**
@@ -70,8 +73,10 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+       $categories = Category::all();
        return view('admin.product.edit')
-             ->with('product', $product);
+             ->with('product', $product)
+             ->with('categories', $categories);
     }
 
     /**
@@ -85,7 +90,7 @@ class ProductController extends Controller
     {
         $product->name = $request->name;
         $product->slug = str_slug($request->name);
-        $product->category_id = 1;
+        $product->category_id = $request->category_id;
         $product->description = $request->description;
         $product->price = $request->price;
 
@@ -105,6 +110,6 @@ class ProductController extends Controller
         $product->delete();
         Featured::where('product_id', $delId)->delete();
         File::deleteDirectory(public_path('upload/product_'.$delId));
-        return redirect()->route('index');
+        return redirect()->route('products.index');
     }
 }

@@ -27,7 +27,11 @@
                         <div class="col-md-9 col-sm-9 col-xs-12">
                             <select class="form-control" name="category_id">
                                 <option>----選擇類別----</option>
-                                <option value="1">鞋類</option>
+                                @foreach($categories as $category)
+                                <option value="{{$category->id}}" {{$category->id == $product->category_id? 'selected': ""}}>
+                                    {{$category->name}}
+                                </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -106,7 +110,7 @@
                             <button id="submit" type="submit" class="btn btn-success">確定</button>
                         </div>
                         <div class="col-xs-5">
-                            <a href="{{route('index')}}" type="button" class="btn btn-primary">取消</a>
+                            <a href="{{route('products.index')}}" type="button" class="btn btn-primary">取消</a>
                         </div>
                     </div>
                 </form>
@@ -364,7 +368,7 @@
                 contentType: false,
 
                 success: function(res){
-                    window.location.href = "http://localhost:8080/admin/index";
+                    window.location.href = "http://localhost:8080/admin/products";
                 },
 
                 error: function(xhr, status, error) {

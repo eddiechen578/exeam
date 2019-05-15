@@ -16,6 +16,10 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function product_skuses(){
+        return $this->hasMany(Product_skus::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';

@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt(1111),
-            'type' => \App\User::DEFAULT_TYPE
+            'type' => \App\User::ADMIN_TYPE
         ]);
     }
 }

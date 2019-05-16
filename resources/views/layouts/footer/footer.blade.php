@@ -41,6 +41,7 @@
 <script src="{{ asset('js/vendors/bootstrap-daterangepicker/daterangepicker.js') }}" type="48ada97e7b77cc51aa463a84-text/javascript"></script>
 <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
         crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="{{ asset('js/build/js/custom.min.js') }}" type="48ada97e7b77cc51aa463a84-text/javascript"></script>
 <!-- Google Analytics -->

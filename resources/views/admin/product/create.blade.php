@@ -44,6 +44,12 @@
                             <input type="number" name="price" id="autocomplete-custom-append" class="form-control col-md-10"/>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-3 col-xs-12">是否上架</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12" style="padding-top: 5px">
+                             <input type="checkbox" name="on_sale" value="1" class="js_switch" checked />
+                        </div>
+                    </div>
                     <hr>
                     <div class="form-group">
                         <div class="row">
@@ -52,9 +58,8 @@
                             </div>
                             <div class="col-md-1 pull-right image-upload">
                                 <label for="file-input">
-                                    <img src="https://goo.gl/pB9rpQ" title="上傳圖片"/>
+                                    <i title="上傳圖片" class="fa fa-upload fa-3x"></i>
                                 </label>
-
                                 <input id="file-input" type="file" multiple/>
                                 <input class="uploadEdit" photo-index = -1 id="upload" type="file"/>
                             </div>
@@ -64,7 +69,7 @@
                                 <div class="image view view-first demo-gallery">
                                     <img style="width: 100%; height:80%;display: block;" src="#" alt="image" uuid=""/>
                                     <div class="mask">
-                                        <p>Your Text</p>
+                                        <p></p>
                                         <div class="tools tools-bottom">
                                             <a href="#" title="預覽圖片" onclick="preview(this)"><i class="fa fa-search"></i></a>
                                             <a href="#" title="更改圖片" onclick="changeImg(this)"><i class="fa fa-pencil"></i></a>
@@ -180,14 +185,25 @@
         }
     </style>
 @endsection
+
 @section('scripts')
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script>
         var modal = document.getElementById('myModal');
         var modalImg = document.getElementById("img01");
         var span = document.getElementsByClassName("close")[0];
         var max = $('.col-md-55').length - 1;
         var formData = new FormData();
+
+        var elem = document.querySelector('.js_switch');
+        var init = new Switchery(elem);
+
+        $(".js_switch").on('change', function() {
+            if ($(this).is(':checked')) {
+                $(this).attr('value', 1);
+            } else {
+                $(this).attr('value', 0);
+            }
+        });
 
         span.onclick = function() {
             modal.style.display = "none";
@@ -294,7 +310,7 @@
 
                 headers: {
 
-                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 
                 },
 

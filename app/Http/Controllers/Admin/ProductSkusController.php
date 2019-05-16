@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Entities\Product_skus;
+use App\Entities\Product;
+use App\Entities\ProductSkus;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ProductSkusController extends Controller
 {
@@ -14,7 +16,10 @@ class ProductSkusController extends Controller
      */
     public function index()
     {
-        //
+        $productSkuses = ProductSkus::with('product')->latest()->get();
+
+        return view('admin.productSkus.index')
+             ->with('productSkuses', $productSkuses);
     }
 
     /**
@@ -24,7 +29,10 @@ class ProductSkusController extends Controller
      */
     public function create()
     {
-        //
+        $products = Product::all();
+
+        return view('admin.productSkus.create')
+            ->with('products', $products);
     }
 
     /**
@@ -35,7 +43,11 @@ class ProductSkusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Product::find($request->product_id)->product_skuses()
+                ->create($request->only('title', 'description', 'price', 'stock'));
+
+        return redirect()->route('productSkuses.index')
+                        ->with('success', '單品新增成功.');;
     }
 
     /**
@@ -55,9 +67,12 @@ class ProductSkusController extends Controller
      * @param  \App\Entities\Product_skus  $product_skus
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product_skus $product_skus)
+    public function edit($id)
     {
-        //
+        $product_skus = ProductSkus::find($id);
+
+        return view('admin.productSkus.edit')
+              ->with('product_skus', $product_skus);
     }
 
     /**
@@ -67,9 +82,13 @@ class ProductSkusController extends Controller
      * @param  \App\Entities\Product_skus  $product_skus
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product_skus $product_skus)
+    public function update(Request $request, $id)
     {
-        //
+        $product_skus = ProductSkus::find($id);
+        $product_skus->update($request->only('title', 'description', 'price', 'stock'));
+
+        return redirect()->route('productSkuses.index')
+                        ->with('success', '單品更新成功.'); ;
     }
 
     /**
@@ -78,8 +97,10 @@ class ProductSkusController extends Controller
      * @param  \App\Entities\Product_skus  $product_skus
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product_skus $product_skus)
+    public function destroy($id)
     {
-        //
+        ProductSkus::destroy($id);
+        return redirect()->back()
+            ->with('success', '單品刪除成功.');
     }
 }

@@ -26,6 +26,7 @@
     <!-- bootstrap-daterangepicker -->
     <link href="{{ asset('css/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
 
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="{{ asset('css/build/css/custom.min.css') }}" rel="stylesheet">
     @yield('styles')

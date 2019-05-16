@@ -34,6 +34,7 @@
             <li><a><i class="fa fa-edit"></i> 商品基本資料 <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="{{route('products.index')}}">商品主表</a></li>
+                    <li><a href="{{route('productSkuses.index')}}">單品主表</a></li>
                     <li><a href="{{route('categories.index')}}">類別主表</a></li>
                 </ul>
             </li>

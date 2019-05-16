@@ -17,7 +17,7 @@ class Product extends Model
     }
 
     public function product_skuses(){
-        return $this->hasMany(Product_skus::class);
+        return $this->hasMany(ProductSkus::class);
     }
 
     public function getRouteKeyName()

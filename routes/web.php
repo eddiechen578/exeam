@@ -18,14 +18,16 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/authLogin', 'Auth\LoginController@authLogin')->name('authLogin');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function (){
+Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'admin'], function (){
     Route::Resource('products', 'ProductController');
+    Route::post('/products/product_details', 'ProductController@productDetail')->name('productDetail');
+    Route::Resource('productSkuses', 'ProductSkusController');
     Route::get('/categories/trashed', 'CategoryController@trashed')->name('categories.trashed');
     Route::get('/categories/kill/{id}', 'CategoryController@kill')->name('categories.kill');
     Route::get('/categories/restore/{id}', 'CategoryController@restore')->name('categories.restore');
     Route::Resource('categories', 'CategoryController');
     Route::post('/featured/create', 'FeaturedController@store')->name('featured.store');
-    Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 });

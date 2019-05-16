@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Entities\Category;
-use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
+use App\Http\Controllers\Controller;
 class CategoryController extends Controller
 {
     /**
@@ -43,7 +43,8 @@ class CategoryController extends Controller
         $category->slug = str_slug($validate['name']);
         $category->save();
 
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')
+                        ->with('success', '類別新增成功.');
     }
 
     /**
@@ -82,7 +83,8 @@ class CategoryController extends Controller
         $category->slug = str_slug($request->name);
         $category->save();
 
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')
+                        ->with('success', '類別更新成功.');
     }
 
     /**
@@ -94,7 +96,8 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->back();
+        return redirect()->back()
+            ->with('success', '類別刪除成功.');
     }
 
     public function trashed(){

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Entities\Category;
 use App\Entities\Product;
 use App\Entities\Featured;
 use File;
-use http\Env\Response;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -49,6 +49,7 @@ class ProductController extends Controller
            'category_id' => $request->category_id,
            'description' => $request->description,
            'price' => $request->price,
+           'on_sale' => (int)$request->on_sale
         ]);
 
         return response()->json(['status' => $product->id], 200);
@@ -93,6 +94,7 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->description = $request->description;
         $product->price = $request->price;
+        $product->on_sale = (int)$request->on_sale;
 
         $product->save();
         return response()->json(['status' => $product->id], 200);
@@ -110,6 +112,28 @@ class ProductController extends Controller
         $product->delete();
         Featured::where('product_id', $delId)->delete();
         File::deleteDirectory(public_path('upload/product_'.$delId));
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')
+            ->with('success', '商品刪除成功.');;
+    }
+
+    public function productDetail(Request $request){
+
+        $product_id = $request->product_id;
+
+        $product = Product::find($product_id);
+
+        $img_name = $product->featureds[0]->name;
+
+        $category_name = $product->category->name;
+
+        $product_detail = [
+              'product_name' => $product->name,
+              'img_name' => $img_name,
+              'description'=> $product->description,
+              'category_name' => $category_name,
+              'on_sale' => $product->on_sale? '是': '否'
+        ];
+
+        return response()->json(['status' => $product_detail], 200);
     }
 }

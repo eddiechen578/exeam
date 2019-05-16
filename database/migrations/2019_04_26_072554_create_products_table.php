@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('category_id');
             $table->text('description')->nullable();
             $table->decimal('price', 6, 2);
+            $table->boolean('on_sale')->default(0);
             $table->timestamps();
         });
     }

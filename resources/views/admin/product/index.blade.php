@@ -44,7 +44,7 @@
                         </td>
                     </tr>
                     @endforeach
-                    </tbody>
+                  </tbody>
                 </table>
             </div>
         </div>
@@ -57,9 +57,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script>
+
         $('#datatable-buttons').DataTable({
             language: {
-                url: "{{asset('js/plug-ins/Chinese-traditional.json')}}"
+                url: "{{asset('js/plug-ins/Chinese-traditional.json')}}",
+                'responsive': true
             }
         });
     </script>

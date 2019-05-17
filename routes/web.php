@@ -17,10 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/login', 'Auth\LoginController@index')->name('admin.login');
 Route::post('/authLogin', 'Auth\LoginController@authLogin')->name('authLogin');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'admin'], function (){
+Route::group(['prefix' => 'admin', 'middleware' => 'is_admin', 'namespace' => 'admin'], function (){
     Route::Resource('products', 'ProductController');
     Route::post('/products/product_details', 'ProductController@productDetail')->name('productDetail');
     Route::Resource('productSkuses', 'ProductSkusController');
@@ -29,5 +30,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'admin
     Route::get('/categories/restore/{id}', 'CategoryController@restore')->name('categories.restore');
     Route::Resource('categories', 'CategoryController');
     Route::post('/featured/create', 'FeaturedController@store')->name('featured.store');
-
+    Route::Resource('users', 'UserController');
+    Route::get('/userDetail', 'UserController@userResult')->name('userDetail');
 });

@@ -80,7 +80,7 @@
                         <label class="control-label col-md-2 col-sm-2 col-xs-2">庫存
                         </label>
                         <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" name="stock"
+                            <input type="number" class="form-control" name="stock"
                                    placeholder="輸入庫存"  value="{{$product_skus->stock}}"
                             >
                         </div>

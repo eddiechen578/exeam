@@ -38,7 +38,7 @@
                     <li><a href="{{route('categories.index')}}">類別主表</a></li>
                 </ul>
             </li>
-            <li><a><i class="fa fa-user"></i> 顧客</a>
+            <li><a href="{{route('users.index')}}"><i class="fa fa-user"></i> 顧客</a>
             </li>
             <li><a><i class="fa fa-shopping-cart"></i> 訂單 </a>
             </li>

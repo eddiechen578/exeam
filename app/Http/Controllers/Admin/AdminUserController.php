@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Entities\Role;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-class UserController extends Controller
+class AdminUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-       $users = User::where('type', 'default')->get();
-
-       return view('admin.user.index')
-                 ->with('users', $users);
+        $users = User::where('type', \App\User::ADMIN_TYPE);
+        return view('admin.adminUser.index')
+              ->with('users', $users);
     }
 
     /**
@@ -28,7 +27,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::all();
+
+        return view('admin.adminUser.create')
+              ->with('roles', $roles);
     }
 
     /**

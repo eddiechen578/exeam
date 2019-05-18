@@ -31,5 +31,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin', 'namespace' => 'a
     Route::Resource('categories', 'CategoryController');
     Route::post('/featured/create', 'FeaturedController@store')->name('featured.store');
     Route::Resource('users', 'UserController');
-    Route::get('/userDetail', 'UserController@userResult')->name('userDetail');
+    Route::Resource('roles', 'RoleController');
+    Route::Resource('adminUsers', 'AdminUserController');
 });

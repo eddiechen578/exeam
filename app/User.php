@@ -5,10 +5,11 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use App\Permissions\HasPermissionsTrait;
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasPermissionsTrait;
 
     const ADMIN_TYPE = 'admin';
     const DEFAULT_TYPE = 'default';
@@ -41,6 +42,11 @@ class User extends Authenticatable
     ];
 
     public function isAdmin(){
+
         return $this->type === self::ADMIN_TYPE;
+    }
+
+    public function getRoleAttribute(){
+        return $this->roles->name;
     }
 }

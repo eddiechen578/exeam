@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1f8b8c45-be1f-4d1f-a080-97d5582a97f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar/siderbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar/siderbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminUser/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminUser/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,15 +37,15 @@
           <entry key="dummy" value="8" />
           <entry key="env" value="15" />
           <entry key="js" value="28" />
-          <entry key="php" value="15594" />
+          <entry key="php" value="17336" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="7291" />
+          <entry key="Blade" value="8746" />
           <entry key="CSS" value="1" />
           <entry key="JavaScript" value="28" />
-          <entry key="PHP" value="8303" />
+          <entry key="PHP" value="8590" />
           <entry key="PLAIN_TEXT" value="23" />
         </counts>
       </usages-collector>
@@ -59,20 +54,20 @@
           <entry key="css" value="6" />
           <entry key="env" value="2" />
           <entry key="jpg" value="2" />
-          <entry key="js" value="8" />
+          <entry key="js" value="9" />
           <entry key="json" value="1" />
-          <entry key="php" value="421" />
+          <entry key="php" value="425" />
           <entry key="png" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="179" />
+          <entry key="Blade" value="180" />
           <entry key="CSS" value="6" />
           <entry key="Image" value="4" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="8" />
-          <entry key="PHP" value="242" />
+          <entry key="JavaScript" value="9" />
+          <entry key="PHP" value="245" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -80,23 +75,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/adminUser/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdminUserController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="290">
-              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+              <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
               <folding>
-                <element signature="e#46#68#0#PHP" expanded="true" />
+                <element signature="e#46#74#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/adminUser/create.blade.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="61" column="65" selection-start-line="61" selection-start-column="65" selection-end-line="61" selection-end-column="65" />
+            <state relative-caret-position="243">
+              <caret line="35" column="27" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="27" />
+              <folding>
+                <element signature="e#7#389#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,6 +119,7 @@
       <find>hasPermissionTo</find>
       <find>setMoveBtnsListener</find>
       <find>_multiTransfer</find>
+      <find>console</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,12 +172,12 @@
         <option value="$PROJECT_DIR$/app/Entities/Role.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminUserController.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/sidebar/siderbar.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/adminUser/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminUserController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/user/create.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminUserController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/adminUser/create.blade.php" />
       </list>
     </option>
@@ -308,32 +316,6 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="selected" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="exeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exeam" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exeam" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exeam" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exeam" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="adminUser" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -342,7 +324,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="we&#9;FILE&#9;file://C:/exeam/exeam/routes/web.php&#10;sid&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/sidebar/siderbar.blade.php&#10;ADM&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/AdminUserController.php&#10;AdminUserController&#9;null&#9;null&#10;ro&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/RoleController.php&#10;side&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/sidebar/siderbar.blade.php&#10;web&#9;FILE&#9;file://C:/exeam/exeam/routes/web.php&#10;permiss&#9;FILE&#9;file://C:/exeam/exeam/app/Entities/Permission.php&#10;role.php&#9;FILE&#9;file://C:/exeam/exeam/app/Entities/Role.php&#10;LoginController&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Auth/LoginController.php&#10;inde&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/productSkus/index.blade.php&#10;in&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/productSkus/index.blade.php&#10;ind&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/productSkus/index.blade.php&#10;pro&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/ProductController.php&#10;cate&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/CategoryController.php&#10;ed&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/category/edit.blade.php&#10;pr&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/ProductController.php&#10;ca&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/CategoryController.php&#10;cre&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/category/create.blade.php&#10;CA&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Requests/CategoryRequest.php&#10;logi&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Auth/LoginController.php&#10;lo&#9;FILE&#9;file://C:/exeam/exeam/resources/views/auth/login.blade.php&#10;crea&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/category/create.blade.php&#10;login&#9;FILE&#9;file://C:/exeam/exeam/resources/views/auth/login.blade.php&#10;si&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/sidebar/siderbar.blade.php&#10;edi&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/product/edit.blade.php&#10;fe&#9;null&#9;null&#10;hea&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/header/header.blade.php&#10;f&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php&#10;fo&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php&#10;head&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/header/header.blade.php&#10;app&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/app.blade.php&#10;foo&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php&#10;ho&#9;FILE&#9;file://C:/exeam/exeam/resources/views/home.blade.php&#10;footer&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php&#10;a&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/app.blade.php&#10;w&#9;FILE&#9;file://C:/exeam/exeam/routes/web.php&#10;custom&#9;FILE&#9;file://C:/exeam/exeam/public/css/build/css/custom.min.css&#10;U&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/UserController.php&#10;sendLoginResponse&#9;null&#9;null&#10;WE&#9;FILE&#9;file://C:/exeam/exeam/routes/web.php&#10;Validator  &#9;null&#9;null&#10;usercontr&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="ro&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/RoleController.php&#10;we&#9;FILE&#9;file://C:/exeam/exeam/routes/web.php&#10;RoleController&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/RoleController.php&#10;sid&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/sidebar/siderbar.blade.php&#10;ADM&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/AdminUserController.php&#10;AdminUserController&#9;null&#9;null&#10;side&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/sidebar/siderbar.blade.php&#10;web&#9;FILE&#9;file://C:/exeam/exeam/routes/web.php&#10;permiss&#9;FILE&#9;file://C:/exeam/exeam/app/Entities/Permission.php&#10;role.php&#9;FILE&#9;file://C:/exeam/exeam/app/Entities/Role.php&#10;LoginController&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Auth/LoginController.php&#10;inde&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/productSkus/index.blade.php&#10;in&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/productSkus/index.blade.php&#10;ind&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/productSkus/index.blade.php&#10;pro&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/ProductController.php&#10;cate&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/CategoryController.php&#10;ed&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/category/edit.blade.php&#10;pr&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/ProductController.php&#10;ca&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/CategoryController.php&#10;cre&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/category/create.blade.php&#10;CA&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Requests/CategoryRequest.php&#10;logi&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Auth/LoginController.php&#10;lo&#9;FILE&#9;file://C:/exeam/exeam/resources/views/auth/login.blade.php&#10;crea&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/category/create.blade.php&#10;login&#9;FILE&#9;file://C:/exeam/exeam/resources/views/auth/login.blade.php&#10;si&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/sidebar/siderbar.blade.php&#10;edi&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/product/edit.blade.php&#10;fe&#9;null&#9;null&#10;hea&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/header/header.blade.php&#10;f&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php&#10;fo&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php&#10;head&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/header/header.blade.php&#10;app&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/app.blade.php&#10;foo&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php&#10;ho&#9;FILE&#9;file://C:/exeam/exeam/resources/views/home.blade.php&#10;footer&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php&#10;a&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/app.blade.php&#10;w&#9;FILE&#9;file://C:/exeam/exeam/routes/web.php&#10;custom&#9;FILE&#9;file://C:/exeam/exeam/public/css/build/css/custom.min.css&#10;U&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/UserController.php&#10;sendLoginResponse&#9;null&#9;null&#10;WE&#9;FILE&#9;file://C:/exeam/exeam/routes/web.php&#10;Validator  &#9;null&#9;null&#10;usercontr&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -392,12 +374,12 @@
       <workItem from="1557910382562" duration="4080000" />
       <workItem from="1557967616694" duration="28015000" />
       <workItem from="1558054240758" duration="28460000" />
-      <workItem from="1558140457710" duration="10491000" />
+      <workItem from="1558140457710" duration="19685000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147939000" />
+    <option name="totallyTimeSpent" value="157133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -433,13 +415,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/verify.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -724,23 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidebar/siderbar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2397">
@@ -772,26 +730,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/selected/amsify.suggestags.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/product/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="357" column="17" lean-forward="true" selection-start-line="354" selection-start-column="14" selection-end-line="357" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/selected/jquery.amsify.suggestags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-141" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdminUserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+        <state relative-caret-position="-650">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
           <folding>
             <element signature="e#46#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/selected/amsify.suggestags.css">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/selected/jquery.amsify.suggestags.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
+          <folding>
+            <element signature="e#46#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/adminUser/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="61" column="65" selection-start-line="61" selection-start-column="65" selection-end-line="61" selection-end-column="65" />
+        <state relative-caret-position="163">
+          <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
         </state>
       </provider>
     </entry>

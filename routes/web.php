@@ -33,4 +33,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin', 'namespace' => 'a
     Route::Resource('users', 'UserController');
     Route::Resource('roles', 'RoleController');
     Route::Resource('adminUsers', 'AdminUserController');
+    Route::get('/get_roles', 'RoleController@getRoles')->name('getRoles');
 });

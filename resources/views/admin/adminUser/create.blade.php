@@ -39,6 +39,12 @@
                             <input type="password" class="form-control" name="email" placeholder="輸入確認密碼">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-3 col-xs-12">角色</label>
+                        <div class="col-md-6 col-sm-6 col-xs-10">
+                            <input id="roles" type="text" name="roles" value="" class="form-control">
+                        </div>
+                    </div>
                     <div class="ln_solid"></div>
                     <div class="form-group">
                         <div class="col-xs-7 col-xs-push-5">
@@ -61,6 +67,33 @@
 @section('scripts')
     <script src="{{asset('js/selected/jquery.amsify.suggestags.js')}}"></script>
     <script>
+        function getRole() {
+           var suggestionsArr = [];
+           $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                async: false,
+                type: 'get',
+                url: '/admin/get_roles',
+                success: function (data) {
+                    data.forEach(function (item) {
+                        suggestionsArr.push(item.slug)
+                    });
+                },
+                error: function (xhr, status, error) {
+                    var err = eval("(" + xhr.responseText + ")");
+                    console.log(err.Message);
+                }
+            });
+          return suggestionsArr;
+        }
+       let suggestion = getRole();
 
+        $('#roles').amsifySuggestags({
+            type: 'bootstrap',
+            suggestions: suggestion,
+            whiteList: true
+        });
     </script>
 @endsection

@@ -117,4 +117,10 @@ class RoleController extends Controller
         }
         $role->delete();
     }
+
+    public function getRoles(){
+
+        $roles = Role::all();
+        return response()->json($roles, 200);
+    }
 }

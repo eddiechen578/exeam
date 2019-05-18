@@ -9,7 +9,9 @@
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
+                 @roles('administrator')
                     <li><a href="{{route('products.create')}}" title="新增商品"><i class=" fa fa-2x fa-plus-square-o"></i></a></li>
+                 @endroles
                 </ul>
                 <div class="clearfix"></div>
             </div>
@@ -33,14 +35,18 @@
                         <td>{{$product->category->name}}</td>
                         <td>{{$product->price}}<i class="fa fa-dollar"></i></td>
                         <td class="text-center">
+                            @roles('administrator')
                             <a href="{{route('products.edit', $product->slug)}}"><i class="fa fa-pencil"></i></a>
+                            @endroles
                         </td>
                         <td class="text-center">
+                            @roles('administrator')
                             <form method="POST" action="{{route('products.destroy', $product->slug)}}">
                                 @csrf
                                 {{ method_field('DELETE') }}
                                 <a href="javascript:;" onclick="parentNode.submit();" ><i class="fa fa-trash"></i></a>
                             </form>
+                            @endroles
                         </td>
                     </tr>
                     @endforeach

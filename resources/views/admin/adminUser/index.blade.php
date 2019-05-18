@@ -29,12 +29,16 @@
                         <tr>
                             <td>{{$key+1}}</td>
                             <td>{{$user->name}}</td>
-                            <td>{{$user->role}}</td>
-                            <td class="text-center">
-                                <a href="{{route('roles.edit', $user->id)}}"><i class="fa fa-pencil"></i></a>
+                            <td>
+                                @foreach($user->roles as $role)
+                                    <span class="label label-success">{{$role->name}}</span>
+                                @endforeach
                             </td>
                             <td class="text-center">
-                                <form method="POST" action="{{route('roles.destroy', $user->id)}}">
+                                <a href="{{route('adminUsers.edit', $user->id)}}"><i class="fa fa-pencil"></i></a>
+                            </td>
+                            <td class="text-center">
+                                <form method="POST" action="{{route('adminUsers.destroy', $user->id)}}">
                                     @csrf
                                     {{ method_field('DELETE') }}
                                     <a href="javascript:;" onclick="parentNode.submit();" ><i class="fa fa-trash"></i></a>

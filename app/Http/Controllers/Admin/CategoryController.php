@@ -7,6 +7,10 @@ use App\Http\Requests\CategoryRequest;
 use App\Http\Controllers\Controller;
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role:administrator', ['only' => 'create', 'edit', 'destroy']);
+    }
     /**
      * Display a listing of the resource.
      *

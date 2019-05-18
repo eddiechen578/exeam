@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Entities\Role;
 use App\User;
+use Hash;
 use Illuminate\Http\Request;
+use App\Http\Requests\AdminUserRequest;
 use App\Http\Controllers\Controller;
 class AdminUserController extends Controller
 {
@@ -15,7 +17,8 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        $users = User::where('type', \App\User::ADMIN_TYPE);
+        $users = User::where('type', \App\User::ADMIN_TYPE)->get();
+
         return view('admin.adminUser.index')
               ->with('users', $users);
     }
@@ -39,9 +42,23 @@ class AdminUserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminUserRequest $request)
     {
-        //
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->type  = User::ADMIN_TYPE;
+        $user->save();
+
+        $roles = explode(',', $request->roles);
+        foreach($roles as $role)
+        {
+            $give_role = Role::where('slug', $role)->first();
+            $user->roles()->attach($give_role);
+        }
+        return redirect()->route('adminUsers.index')
+              ->with('success', '管理者新增成功.');
     }
 
     /**
@@ -63,7 +80,18 @@ class AdminUserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+
+        $roles  = "";
+
+        foreach($user->roles as $role){
+            $roles .= $role->slug.',';
+        }
+        $roles = substr($roles,0,-1);
+
+        return view('admin.adminUser.edit')
+             ->with('user', $user)
+             ->with('roles', $roles);
     }
 
     /**
@@ -73,9 +101,30 @@ class AdminUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdminUserRequest $request, $id)
     {
-        //
+        $user = User::find($id);
+
+        $check = $this->passwordCorrect($request->password, $user);
+        dd($check);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        $roles = explode(',', $request->roles);
+
+        foreach($user->roles as $role){
+            $user->roles()->detach($role);
+        }
+
+        foreach($roles as $role)
+        {
+          $give_role = Role::where('slug', $role)->first();
+          $user->roles()->attach($give_role);
+        }
+        return redirect()->route('adminUsers.index')
+                        ->with('success', '管理者更新成功.');
     }
 
     /**
@@ -86,6 +135,19 @@ class AdminUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+
+        foreach($user->roles as $role){
+            $user->roles()->detach($role);
+        }
+        $user->delete();
+
+        return redirect()->back()
+              ->with('success', '用戶刪除成功.');
+    }
+
+    private function passwordCorrect($suppliedPassword, $user)
+    {
+        return Hash::check('1111', $user->password, []);
     }
 }

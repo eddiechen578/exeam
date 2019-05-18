@@ -46,7 +46,4 @@ class User extends Authenticatable
         return $this->type === self::ADMIN_TYPE;
     }
 
-    public function getRoleAttribute(){
-        return $this->roles->name;
-    }
 }

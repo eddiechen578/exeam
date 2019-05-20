@@ -44,7 +44,6 @@ class CategoryController extends Controller
         $validate = $request->validated();
         $category = new Category();
         $category->name = $validate['name'];
-        $category->slug = str_slug($validate['name']);
         $category->save();
 
         return redirect()->route('categories.index')
@@ -84,7 +83,6 @@ class CategoryController extends Controller
     public function update(Category $category, CategoryRequest $request)
     {
         $category->name = $request->name;
-        $category->slug = str_slug($request->name);
         $category->save();
 
         return redirect()->route('categories.index')
@@ -114,12 +112,14 @@ class CategoryController extends Controller
     public function kill($id){
         $category = Category::withTrashed()->where('id', $id)->first();
         $category->forceDelete();
-        return redirect()->back();
+        return redirect()->back()
+            ->with('success', '類別刪除成功.');
     }
 
     public function restore($id){
         $category = Category::withTrashed()->where('id', $id)->first();
         $category->restore();
-        return redirect()->back();
+        return redirect()->back()
+            ->with('success', '類別還原成功.');
     }
 }

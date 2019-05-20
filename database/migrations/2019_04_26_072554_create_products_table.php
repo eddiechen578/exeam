@@ -19,8 +19,12 @@ class CreateProductsTable extends Migration
             $table->string('slug', 32)->unique();
             $table->unsignedInteger('category_id');
             $table->text('description')->nullable();
+            $table->float('rating')->default(5);
+            $table->unsignedInteger('sold_count')->default(0);
+            $table->unsignedInteger('review_count')->default(0);
             $table->decimal('price', 6, 2);
             $table->boolean('on_sale')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

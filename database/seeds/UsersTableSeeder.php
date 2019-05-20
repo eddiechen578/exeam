@@ -32,6 +32,5 @@ class UsersTableSeeder extends Seeder
         $manager->password = bcrypt('1111');
         $manager->type = \App\User::ADMIN_TYPE;
         $manager->save();
-
     }
 }

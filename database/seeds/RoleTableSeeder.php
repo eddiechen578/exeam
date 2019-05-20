@@ -12,12 +12,12 @@ class RoleTableSeeder extends Seeder
      */
     public function run()
     {
-        $dev_permission = Permission::where('slug','create-product')->first();
+        $dev_permission = Permission::where('slug','create-merchandise')->first();
         $manager_permission = Permission::where('slug', 'edit-users')->first();
 
         //RoleTableSeeder.php
         $dev_role = new Role();
-        $dev_role->slug = 'developer';
+        $dev_role->slug = 'administrator';
         $dev_role->name = 'Front-end Developer';
         $dev_role->save();
         $dev_role->permissions()->attach($dev_permission);

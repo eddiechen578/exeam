@@ -21,7 +21,7 @@ class ProductSkusController extends Controller
      */
     public function index()
     {
-        $productSkuses = ProductSkus::with('product')->latest()->get();
+        $productSkuses = ProductSkus::with('merchandise')->latest()->get();
 
         return view('admin.productSkus.index')
              ->with('productSkuses', $productSkuses);

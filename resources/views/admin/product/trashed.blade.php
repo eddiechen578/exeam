@@ -5,7 +5,7 @@
         <div class="x_panel">
             <div class="x_title">
                 @include('layouts._messages')
-                <h2>類別/垃圾桶 </h2>
+                <h2>商品/垃圾桶 </h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -18,21 +18,21 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>類別名稱</th>
+                        <th>商品名稱</th>
                         <th class="text-center">還原</th>
                         <th class="text-center">刪除</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($categories as $key => $category)
+                    @foreach($products as $key => $product)
                         <tr>
                             <td>{{$key+1}}</td>
-                            <td>{{$category->name}}</td>
+                            <td>{{$product->name}}</td>
                             <td class="text-center">
-                                <a href="{{route('categories.restore', $category->id)}}"><i class="fa fa-recycle"></i></a>
+                                <a href="{{route('products.restore', $product->id)}}"><i class="fa fa-recycle"></i></a>
                             </td>
                             <td class="text-center">
-                                <a href="{{route('categories.kill', $category->id)}}"><i class="fa fa-trash"></i></a>
+                                <a href="{{route('products.kill', $product->id)}}"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach

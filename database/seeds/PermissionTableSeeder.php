@@ -16,7 +16,7 @@ class PermissionTableSeeder extends Seeder
 //        $manager_role = Role::where('slug', 'manager')->first();
 
         $createTasks = new Permission();
-        $createTasks->slug = 'create-product';
+        $createTasks->slug = 'create-merchandise';
         $createTasks->name = 'Create Product';
         $createTasks->save();
 

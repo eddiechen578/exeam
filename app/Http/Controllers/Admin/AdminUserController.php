@@ -106,10 +106,10 @@ class AdminUserController extends Controller
         $user = User::find($id);
 
         $check = $this->passwordCorrect($request->password, $user);
-        dd($check);
+        $check? $pw = $request->password: $pw = bcrypt($request->password);
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = bcrypt($request->password);
+        $user->password = $pw;
         $user->save();
 
         $roles = explode(',', $request->roles);
@@ -148,6 +148,6 @@ class AdminUserController extends Controller
 
     private function passwordCorrect($suppliedPassword, $user)
     {
-        return Hash::check('1111', $user->password, []);
+        return $suppliedPassword === $user->password;
     }
 }

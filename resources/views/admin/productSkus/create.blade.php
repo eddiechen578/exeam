@@ -18,6 +18,7 @@
                         <label class="control-label col-md-2 col-sm-3 col-xs-12">選擇商品</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                             <select id="product_id" name="product_id" class="form-control">
+                                    <option>------請選擇商品------</option>
                                 @foreach($products as $product)
                                     <option value="{{$product->id}}">{{$product->name}}</option>
                                 @endforeach

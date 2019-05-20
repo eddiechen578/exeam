@@ -50,7 +50,6 @@ class ProductController extends Controller
     {
         $product = Product::create([
            'name' => $request->name,
-           'slug' => str_slug($request->name),
            'category_id' => $request->category_id,
            'description' => $request->description,
            'price' => $request->price,
@@ -95,7 +94,6 @@ class ProductController extends Controller
     public function update(Product $product, Request $request)
     {
         $product->name = $request->name;
-        $product->slug = str_slug($request->name);
         $product->category_id = $request->category_id;
         $product->description = $request->description;
         $product->price = $request->price;
@@ -140,5 +138,27 @@ class ProductController extends Controller
         ];
 
         return response()->json(['status' => $product_detail], 200);
+    }
+
+    public function trashed(){
+
+        $products = Product::onlyTrashed()->get();
+
+        return view('admin.product.trashed')
+            ->with('products', $products);
+    }
+
+    public function kill($id){
+        $products = Product::withTrashed()->where('id', $id)->first();
+        $products->forceDelete();
+        return redirect()->back()
+        ->with('success', '商品刪除成功.');
+    }
+
+    public function restore($id){
+        $products = Product::withTrashed()->where('id', $id)->first();
+        $products->restore();
+        return redirect()->back()
+              ->with('success', '商品還原成功.');
     }
 }

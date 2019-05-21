@@ -9,8 +9,7 @@ class Role extends Model
     protected $guarded = [];
 
     public function permissions(){
-      return
-      $this->belongsToMany(Permission::class, 'roles_permissions');
+      return $this->belongsToMany(Permission::class, 'roles_permissions');
     }
 
     public function getRouteKeyName()

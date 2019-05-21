@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Entities\Product;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -44,6 +45,12 @@ class User extends Authenticatable
     public function isAdmin(){
 
         return $this->type === self::ADMIN_TYPE;
+    }
+
+    public function favoriteProducts(){
+        return $this->belongsToMany(Product::class, 'user_favor_products')
+              ->withTimestamps()
+              ->orderBy('user_favor_products.created_at', 'desc');
     }
 
 }

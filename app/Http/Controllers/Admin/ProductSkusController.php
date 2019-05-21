@@ -11,7 +11,7 @@ class ProductSkusController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('role:administrator', ['only' => 'create', 'edit', 'destroy']);
+        $this->middleware('role:Create Product', ['only' => 'create', 'edit', 'destroy']);
     }
 
     /**
@@ -21,7 +21,7 @@ class ProductSkusController extends Controller
      */
     public function index()
     {
-        $productSkuses = ProductSkus::with('merchandise')->latest()->get();
+        $productSkuses = ProductSkus::with('product')->latest()->get();
 
         return view('admin.productSkus.index')
              ->with('productSkuses', $productSkuses);
@@ -34,7 +34,7 @@ class ProductSkusController extends Controller
      */
     public function create()
     {
-        $products = Product::all();
+        $products = Product::with('product_skuses')->get();
 
         return view('admin.productSkus.create')
             ->with('products', $products);

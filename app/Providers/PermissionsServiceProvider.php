@@ -26,8 +26,8 @@ class PermissionsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::if('roles', function ($role){
-            return auth()->check() && auth()->user()->hasRole($role);
+        Blade::if('roles', function ($permission){
+            return auth()->check() && auth()->user()->hasRole($permission);
         });
 
         Permission::get()->map(function ($permission){

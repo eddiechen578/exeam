@@ -13,14 +13,14 @@ class RoleMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $role, $permission = null)
+    public function handle($request, Closure $next, $permission)
     {
-        if(!$request->user()->hasRole($role)) {
+        if(!$request->user()->hasRole($permission)) {
             abort(403);
         }
-        if($permission !== null && !$request->user()->can($permission)) {
-            abort(403);
-        }
+//        if($permission !== null && !$request->user()->can($permission)) {
+//            abort(403);
+//        }
 
         return $next($request);
     }

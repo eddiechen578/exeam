@@ -9,7 +9,7 @@
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
-                    @roles('administrator')
+                    @roles('Create Product')
                     <li><a href="{{route('categories.create')}}" title="新增類別"><i class=" fa fa-2x fa-plus-square-o"></i></a></li>
                     @endroles
                 </ul>
@@ -31,12 +31,12 @@
                             <td>{{$key+1}}</td>
                             <td>{{$category->name}}</td>
                             <td class="text-center">
-                                @roles('administrator')
+                                @roles('Create Product')
                                 <a href="{{route('categories.edit', $category->slug)}}"><i class="fa fa-pencil"></i></a>
                                 @endroles
                             </td>
                             <td class="text-center">
-                                @roles('administrator')
+                                @roles('Create Product')
                                 <form method="POST" action="{{route('categories.destroy', $category->slug)}}">
                                     @csrf
                                     {{ method_field('DELETE') }}

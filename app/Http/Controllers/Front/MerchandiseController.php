@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Entities\OrderItem;
+use App\Exceptions\InvalidRequestException;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Entities\Product;
@@ -77,7 +79,28 @@ class MerchandiseController extends Controller
      */
     public function show(Request $request, $id)
     {
-        dd($id);
+        $product = Product::find($id);
+        if(!$product->on_sale) {
+            throw new InvalidRequestException('商品未上架.');
+        }
+
+        $favored = false;
+
+        if($user = $request->user()){
+            $favored = (boolean)$user->favoriteProducts()->find($product->id);
+        }
+
+        $reviews = OrderItem::with(['order.user', 'productSku'])
+                ->where('product_id', $product->id)
+                ->whereNotNull('reviewed_at')
+                ->orderBy('reviewed_at', 'desc')
+                ->limit(10)
+                ->get();
+        return view('Front.merchandise.show',[
+                'product' => $product,
+                'favored' => $favored,
+                'reviews' => $reviews
+        ]);
     }
 
     /**

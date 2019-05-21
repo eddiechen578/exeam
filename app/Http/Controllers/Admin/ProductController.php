@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('role:administrator', ['only' => 'create', 'edit', 'destroy']);
+        $this->middleware('role:Create Product', ['only' => 'create', 'edit', 'destroy']);
     }
 
     /**

@@ -14,9 +14,21 @@ trait HasPermissionsTrait{
         return $this->belongsToMany(Permission::class, 'users_permissions');
     }
 
-    public function hasRole( ... $roles){
-        foreach($roles as $role){
-            if($this->roles->contains('slug', $role)){
+    public function hasRole( ... $permission){
+       return $this->hasRoleThroughPermission($permission);
+//        foreach($roles as $role){
+//            if($this->roles->contains('slug', $role)){
+//                return true;
+//            }
+//        }
+//        return false;
+    }
+
+    public function hasRoleThroughPermission($permission){
+        $p = Permission::where('name', $permission)->first();
+
+        foreach($p->roles as $role){
+            if($this->roles->contains($role)){
                 return true;
             }
         }

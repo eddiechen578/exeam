@@ -7,16 +7,25 @@
     @card
     <product-show inline-template>
         <div class="product-info">
-
-            <div class="row">
+            <div class="d-flex justify-content-between">
                 {{-- 商品圖片 --}}
-                <div class="col-md-5">
-                    <img class="cover" src="{{ $product->image_url }}" alt="">
-                </div>
-
+              <div class="col-md-6">
+                    <img class="cover" id="mainImg" src="{{ $product->image_url }}" alt="" width="200" height="200">
+                   <div class="row">
+                       @foreach($product->featureds as $featured)
+                       <div class="col-md-4">
+                           <div class="thumbnail">
+                               <a href="#" onclick="changeImg(this)">
+                                   <img class="img-thumbnail" src="/upload/product_{{$product->id}}/{{$featured->name}}"  style="width:100%">
+                               </a>
+                           </div>
+                       </div>
+                       @endforeach
+                   </div>
+              </div>
                 {{-- 商品主要資訊 --}}
-                <div class="col-md-7">
-                    <div class="title">{{ $product->title }}</div>
+              <div class="col-md-6">
+                    <div class="title">{{ $product->name }}</div>
                     <div class="price"><label>價格</label><em>$</em><span ref="price">{{ $product->price }}</span></div>
                     <div class="sales_and_reviews">
                         <div class="sold_count">累計銷量 <span class="count">{{ $product->sold_count }}</span></div>
@@ -57,7 +66,7 @@
             </div>
 
             {{-- 商品詳細資訊 --}}
-            <div class="product-detail">
+            <div class="product-detail mt-3">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
                         <a href="#detail" class="nav-link active" role="tab" data-toggle="tab" aria-controls="detail">商品介紹</a>
@@ -108,7 +117,11 @@
 @endsection
 
 @push('script')
-    {{--<script>--}}
+    <script>
+        function changeImg(e) {
+           let src = $(e).find('img').attr('src');
+           $('#mainImg').attr('src', src);
+        }
         {{--$(function () {--}}
             {{--$('[data-toggle="tooltip"]').tooltip({ trigger: 'hover' })--}}
             {{--$('.btn-faver').click(function () {--}}
@@ -164,5 +177,5 @@
                 {{--})--}}
             {{--})--}}
         {{--})--}}
-    {{--</script>--}}
+    </script>
 @endpush

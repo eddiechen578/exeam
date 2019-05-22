@@ -7,7 +7,9 @@
 
 require('./bootstrap');
 import SearchBar from './components/SearchBar.vue'
-import ProductShow from './components/ProductShow'
+import ProductShow from './components/ProductShow.vue'
+import SelectDistrict from './components/SelectDistrict.vue'
+import UserAddressesCreateAndEdit from './components/UserAddressesCreateAndEdit.vue'
 window.Vue = require('vue');
 
 /**
@@ -24,6 +26,9 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('SearchBar', SearchBar)
 Vue.component('ProductShow', ProductShow)
+Vue.component('SelectDistrict', SelectDistrict)
+Vue.component('UserAddressesCreateAndEdit', UserAddressesCreateAndEdit)
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

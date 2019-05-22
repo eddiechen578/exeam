@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
-use App\Entities\UserAddress;
 use Illuminate\Http\Request;
-
-class UserAddressController extends Controller
+use App\Http\Controllers\Controller;
+use App\Http\Requests\OrderRequest;
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,18 +33,18 @@ class UserAddressController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OrderRequest $request)
     {
-        //
+       return $request;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Entities\UserAddress  $userAddress
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(UserAddress $userAddress)
+    public function show($id)
     {
         //
     }
@@ -52,10 +52,10 @@ class UserAddressController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Entities\UserAddress  $userAddress
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(UserAddress $userAddress)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +64,10 @@ class UserAddressController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Entities\UserAddress  $userAddress
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserAddress $userAddress)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +75,10 @@ class UserAddressController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Entities\UserAddress  $userAddress
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UserAddress $userAddress)
+    public function destroy($id)
     {
         //
     }

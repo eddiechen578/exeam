@@ -24,4 +24,9 @@ class CartService
             $item->save();
         }
     }
+
+    public function remove($skuIds){
+        if(!is_array($skuIds)) $ids = [$skuIds];
+        Auth::user()->cartItems()->whereIn('product_sku_id', $ids)->delete();
+    }
 }

@@ -50,4 +50,11 @@ Route::group(['namespace' => 'Front'], function (){
     Route::get('cart', 'CartController@index')->name('cart.index');
     Route::post('cart', 'CartController@add')->name('cart.add');
     Route::delete('cart/{sku}', 'CartController@remove')->name('cart.remove');
+
+    Route::post('orders/{order}/received', 'OrderController@received')->name('orders.received');
+    Route::get('orders/{order}/review', 'OrderController@review')->name('orders.review.show');
+    Route::post('orders/{order}/review', 'OrderController@sendReview')->name('orders.review.store');
+    Route::resource('orders', 'OrderController')->only(['index', 'store', 'show']);
+
+    Route::resource('user_addresses', 'UserAddressController')->except('show');
 });

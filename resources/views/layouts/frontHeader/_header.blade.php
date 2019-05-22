@@ -25,7 +25,7 @@
                             {{ Auth::user()->name ?? 'TEST' }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a href="" class="dropdown-item">收件地址</a>
+                            <a href="{{route('user_addresses.index')}}" class="dropdown-item">收件地址</a>
                             <a href="" class="dropdown-item">我的訂單</a>
                             <a href="" class="dropdown-item">我的收藏</a>
                             <div class="dropdown-divider"></div>

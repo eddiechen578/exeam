@@ -2,7 +2,9 @@
 
 namespace App;
 
+use App\Entities\CartItem;
 use App\Entities\Product;
+use App\Entities\UserAddress;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -53,4 +55,11 @@ class User extends Authenticatable
               ->orderBy('user_favor_products.created_at', 'desc');
     }
 
+    public function cartItems(){
+        return $this->hasMany(CartItem::class);
+    }
+
+    public function addresses(){
+        return $this->hasMany(UserAddress::class);
+    }
 }

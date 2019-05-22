@@ -42,4 +42,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin', 'namespace' => 'a
 
 Route::group(['namespace' => 'Front'], function (){
     Route::resource('merchandise', 'MerchandiseController')->only(['index', 'show']);
+    Route::post('merchandise/{product}/favorite', 'MerchandiseController@favor')->name('merchandise.favor');
+    Route::delete('merchandise/{product}/favorite', 'MerchandiseController@disfavor')->name('merchandise.disfavor');
+    Route::get('merchandise/favorites', 'MerchandiseController@favorites')->name('merchandise.favorites');
+
+    // 購物車
+    Route::get('cart', 'CartController@index')->name('cart.index');
+    Route::post('cart', 'CartController@add')->name('cart.add');
+    Route::delete('cart/{sku}', 'CartController@remove')->name('cart.remove');
 });

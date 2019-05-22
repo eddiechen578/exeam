@@ -136,4 +136,32 @@ class MerchandiseController extends Controller
     {
         //
     }
+
+    /**
+     * 將商品加入收藏
+     *
+     * @param Request $request
+     * @param Product $product
+     * @return void
+     */
+
+    public function favor(Request $request, $id ){
+        $product = Product::find($id);
+        $user = $request->user();
+
+        if($user->favoriteProducts()->find($id)){
+            return [];
+        }
+
+        $user->favoriteProducts()->attach($product);
+            return [];
+    }
+
+    public function disfavor(Request $request, $id){
+        $product = Product::find($id);
+        $user = $request->user();
+
+        $user->favoriteProducts()->detach($product);
+        return [];
+    }
 }

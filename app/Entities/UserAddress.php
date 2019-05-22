@@ -5,17 +5,17 @@ namespace App\Entities;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
-class CartItem extends Model
+class UserAddress extends Model
 {
     protected $guarded = [];
 
-    public $timestamps = false;
+    protected $dates = ['last_used_at'];
 
     public function user(){
         return $this->belongsTo(User::class);
     }
 
-    public function productSku(){
-        return $this->belongsTo(ProductSkus::class);
+    public function getFullAddressAttribute(){
+        return "{$this->zip_code} {$this->city}{$this->district}{$this->address}";
     }
 }

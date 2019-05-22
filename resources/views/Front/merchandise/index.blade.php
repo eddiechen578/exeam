@@ -40,7 +40,7 @@
                 <div class="product-content">
                     <div class="top">
                         <div class="img">
-                            <a href="{{ route('merchandise.show', [$product]) }}">
+                            <a href="{{ route('merchandise.show', $product->id) }}">
                                 <img src="{{ $product->image_url }}" alt="" width="50" height="50">
                             </a>
                         </div>

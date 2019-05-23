@@ -24,7 +24,7 @@ class OrderController extends Controller
             ->where('user_id', $request->user()->id)
             ->orderBy('created_at', 'desc')
             ->paginate();
-        return view('Front.orders.index', ['orders' => $orders]);
+        return view('Front.order.index', ['orders' => $orders]);
     }
 
     /**
@@ -97,6 +97,11 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function review(Order $order)
+    {
+
     }
 
     public function applyRefund(){

@@ -28,12 +28,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($order->items as $index => $item)
+                    @foreach ($order->orderItems as $index => $item)
                         <tr>
                             <td class="product-info">
                                 <div class="preview">
                                     <a target="_blank" href="{{ route('products.show', [$item->product]) }}">
-                                        <img src="{{ $item->product->image_url }}">
+                                        <img src="{{ $item->product->image_url }}" width="50" height="50">
                                     </a>
                                 </div>
                                 <div>
@@ -47,13 +47,13 @@
                             <td class="sku-amount text-center">{{ $item->amount }}</td>
 
                             @if($index === 0)
-                                <td rowspan="{{ count($order->items) }}" class="text-center total-amount">
+                                <td rowspan="{{ count($order->orderItems) }}" class="text-center total-amount">
                                     ${{ $order->total_amount }}
                                 </td>
-                                <td rowspan="{{ count($order->items) }}" class="text-center">
+                                <td rowspan="{{ count($order->orderItems) }}" class="text-center">
                                     @if($order->paid_at)
                                         <span class="badge badge-{{ $order->refund_status_color }}">
-                          @if($order->refund_status === \App\Models\Order::REFUND_STATUS_PENDING)
+                                            @if($order->refund_status === \App\Entities\Order::REFUND_STATUS_PENDING)
                                                 已付款
                                             @else
                                                 {{ __("order.refund.{$order->refund_status}") }}
@@ -68,16 +68,16 @@
                                         否則訂單將自動關閉
                                     @endif
                                 </td>
-                                <td rowspan="{{ count($order->items) }}" class="text-center">
+                                <td rowspan="{{ count($order->orderItems) }}" class="text-center">
 
                                     {{-- 訂單 --}}
-                                    <a class="btn btn-primary btn-sm" href="{{ route('orders.show', $order) }}">
+                                    <a class="btn btn-outline-primary btn-sm" href="{{ route('orders.show', $order) }}">
                                         查看訂單
                                     </a>
 
                                     {{-- 評價 --}}
                                     @if($order->paid_at)
-                                        <a class="btn btn-success btn-sm" href="{{ route('orders.review.show', $order) }}">
+                                        <a class="btn btn-outline-success btn-sm" href="{{ route('orders.review.show', $order) }}">
                                             {{ $order->reviewed ? '查看評價' : '評價' }}
                                         </a>
                                     @endif
@@ -92,7 +92,7 @@
         @endforeach
     </ul>
 
-    <div class="my-3">{{ $orders->links() }}</div>
+    <div class="my-3 float-right">{{ $orders->links() }}</div>
 
     @endcard
 

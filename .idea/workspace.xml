@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1f8b8c45-be1f-4d1f-a080-97d5582a97f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/MerchandiseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/MerchandiseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Jobs/CloseOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/CloseOrder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/OrderService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/OrderService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Front/cart/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Front/cart/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/component/card.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Front/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Front/order/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/frontHeader/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/frontHeader/_header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,16 +41,16 @@
           <entry key="dummy" value="8" />
           <entry key="env" value="31" />
           <entry key="js" value="420" />
-          <entry key="php" value="32436" />
+          <entry key="php" value="32743" />
           <entry key="vue" value="1959" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="11728" />
+          <entry key="Blade" value="11827" />
           <entry key="CSS" value="1" />
           <entry key="JavaScript" value="420" />
-          <entry key="PHP" value="20708" />
+          <entry key="PHP" value="20916" />
           <entry key="PLAIN_TEXT" value="39" />
           <entry key="Vue.js" value="1959" />
         </counts>
@@ -65,19 +62,19 @@
           <entry key="jpg" value="2" />
           <entry key="js" value="16" />
           <entry key="json" value="4" />
-          <entry key="php" value="777" />
+          <entry key="php" value="813" />
           <entry key="png" value="4" />
           <entry key="vue" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="270" />
+          <entry key="Blade" value="288" />
           <entry key="CSS" value="6" />
           <entry key="Image" value="6" />
           <entry key="JSON" value="4" />
           <entry key="JavaScript" value="16" />
-          <entry key="PHP" value="507" />
+          <entry key="PHP" value="525" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Vue.js" value="19" />
         </counts>
@@ -87,10 +84,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Front/PaymentController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Front/OrderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            <state relative-caret-position="403">
+              <caret line="103" selection-start-line="103" selection-end-line="103" />
               <folding>
                 <element signature="e#46#69#0#PHP" expanded="true" />
               </folding>
@@ -98,23 +95,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="62" column="109" selection-start-line="62" selection-start-column="109" selection-end-line="62" selection-end-column="109" />
-              <folding>
-                <element signature="e#7#389#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/Front/pay/website.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Front/PaymentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+            <state relative-caret-position="81">
+              <caret line="47" column="34" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="34" />
+              <folding>
+                <element signature="e#46#69#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -157,8 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/js/components/ProductShow.vue" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Front/MerchandiseController.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/AddCartRequest.php" />
         <option value="$PROJECT_DIR$/app/Entities/CartItem.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_20_083153_create_cart_items_table.php" />
@@ -167,7 +153,6 @@
         <option value="$PROJECT_DIR$/app/Entities/UserAddress.php" />
         <option value="$PROJECT_DIR$/resources/views/Front/merchandise/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Front/CartController.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/frontHeader/_header.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/zh-TW.json" />
         <option value="$PROJECT_DIR$/resources/lang/zh-TW/admin.php" />
         <option value="$PROJECT_DIR$/resources/lang/zh-TW/auth.php" />
@@ -191,23 +176,26 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/OrderRequest.php" />
         <option value="$PROJECT_DIR$/app/Entities/ProductSkus.php" />
         <option value="$PROJECT_DIR$/app/Exceptions/InternalException.php" />
-        <option value="$PROJECT_DIR$/app/Entities/Order.php" />
         <option value="$PROJECT_DIR$/app/Services/CartService.php" />
         <option value="$PROJECT_DIR$/resources/views/Front/cart/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Front/order/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Policies/OrderPolicy.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Front/OrderController.php" />
         <option value="$PROJECT_DIR$/resources/views/component/card.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Front/order/show.blade.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Services/OrderService.php" />
         <option value="$PROJECT_DIR$/app/Jobs/CloseOrder.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Events/OrderPaid.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Front/PaymentController.php" />
         <option value="$PROJECT_DIR$/resources/views/Front/pay/website.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Front/PaymentController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Entities/Order.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Front/MerchandiseController.php" />
+        <option value="$PROJECT_DIR$/resources/views/Front/merchandise/favorites.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Front/order/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Front/OrderController.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/frontHeader/_header.blade.php" />
       </list>
     </option>
   </component>
@@ -330,6 +318,17 @@
             <path>
               <item name="exeam" type="b2602c69:ProjectViewProjectNode" />
               <item name="exeam" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="exeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="exeam" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Events" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="exeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="exeam" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -343,15 +342,15 @@
               <item name="exeam" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Front" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="exeam" type="b2602c69:ProjectViewProjectNode" />
               <item name="exeam" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Front" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="frontHeader" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -361,7 +360,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="we&#9;FILE&#9;file://C:/exeam/exeam/routes/web.php&#10;.en&#9;FILE&#9;file://C:/exeam/exeam/.env&#10;.env&#9;FILE&#9;file://C:/exeam/exeam/.env&#10;order&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Front/OrderController.php&#10;ordercontr&#9;null&#9;null&#10;lib&#9;FILE&#9;file://C:/exeam/exeam/public/js/vendors/fastclick/lib&#10;user&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Front/UserAddressController.php&#10;cartService&#9;FILE&#9;file://C:/exeam/exeam/app/Services/CartService.php&#10;CartController&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Front/CartController.php&#10;ca&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Front/CartController.php&#10;_logs&#9;null&#9;null&#10;pr&#9;FILE&#9;file://C:/exeam/exeam/app/Entities/Product.php&#10;side&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/sidebar/siderbar.blade.php&#10;w&#9;FILE&#9;file://C:/exeam/exeam/routes/web.php&#10;prod&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/ProductController.php&#10;use&#9;FILE&#9;file://C:/exeam/exeam/app/User.php&#10;hea&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/header/head.blade.php&#10;header&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/header/header.blade.php&#10;ad&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/AdminUserController.php&#10;ro&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/RoleController.php&#10;RoleController&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/RoleController.php&#10;sid&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/sidebar/siderbar.blade.php&#10;ADM&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/AdminUserController.php&#10;AdminUserController&#9;null&#9;null&#10;web&#9;FILE&#9;file://C:/exeam/exeam/routes/web.php&#10;permiss&#9;FILE&#9;file://C:/exeam/exeam/app/Entities/Permission.php&#10;role.php&#9;FILE&#9;file://C:/exeam/exeam/app/Entities/Role.php&#10;LoginController&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Auth/LoginController.php&#10;inde&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/productSkus/index.blade.php&#10;in&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/productSkus/index.blade.php&#10;ind&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/productSkus/index.blade.php&#10;pro&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/ProductController.php&#10;cate&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/CategoryController.php&#10;ed&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/category/edit.blade.php&#10;cre&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/category/create.blade.php&#10;CA&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Requests/CategoryRequest.php&#10;logi&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Auth/LoginController.php&#10;lo&#9;FILE&#9;file://C:/exeam/exeam/resources/views/auth/login.blade.php&#10;crea&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/category/create.blade.php&#10;login&#9;FILE&#9;file://C:/exeam/exeam/resources/views/auth/login.blade.php&#10;si&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/sidebar/siderbar.blade.php&#10;edi&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/product/edit.blade.php&#10;fe&#9;null&#9;null&#10;f&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php&#10;fo&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php&#10;head&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/header/header.blade.php&#10;app&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/app.blade.php&#10;foo&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php&#10;ho&#9;FILE&#9;file://C:/exeam/exeam/resources/views/home.blade.php&#10;footer&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="order&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Front/OrderController.php&#10;we&#9;FILE&#9;file://C:/exeam/exeam/routes/web.php&#10;.en&#9;FILE&#9;file://C:/exeam/exeam/.env&#10;.env&#9;FILE&#9;file://C:/exeam/exeam/.env&#10;ordercontr&#9;null&#9;null&#10;lib&#9;FILE&#9;file://C:/exeam/exeam/public/js/vendors/fastclick/lib&#10;user&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Front/UserAddressController.php&#10;cartService&#9;FILE&#9;file://C:/exeam/exeam/app/Services/CartService.php&#10;CartController&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Front/CartController.php&#10;ca&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Front/CartController.php&#10;_logs&#9;null&#9;null&#10;pr&#9;FILE&#9;file://C:/exeam/exeam/app/Entities/Product.php&#10;side&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/sidebar/siderbar.blade.php&#10;w&#9;FILE&#9;file://C:/exeam/exeam/routes/web.php&#10;prod&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/ProductController.php&#10;use&#9;FILE&#9;file://C:/exeam/exeam/app/User.php&#10;hea&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/header/head.blade.php&#10;header&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/header/header.blade.php&#10;ad&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/AdminUserController.php&#10;ro&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/RoleController.php&#10;RoleController&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/RoleController.php&#10;sid&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/sidebar/siderbar.blade.php&#10;ADM&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/AdminUserController.php&#10;AdminUserController&#9;null&#9;null&#10;web&#9;FILE&#9;file://C:/exeam/exeam/routes/web.php&#10;permiss&#9;FILE&#9;file://C:/exeam/exeam/app/Entities/Permission.php&#10;role.php&#9;FILE&#9;file://C:/exeam/exeam/app/Entities/Role.php&#10;LoginController&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Auth/LoginController.php&#10;inde&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/productSkus/index.blade.php&#10;in&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/productSkus/index.blade.php&#10;ind&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/productSkus/index.blade.php&#10;pro&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Admin/ProductController.php&#10;cate&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/CategoryController.php&#10;ed&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/category/edit.blade.php&#10;cre&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/category/create.blade.php&#10;CA&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Requests/CategoryRequest.php&#10;logi&#9;FILE&#9;file://C:/exeam/exeam/app/Http/Controllers/Auth/LoginController.php&#10;lo&#9;FILE&#9;file://C:/exeam/exeam/resources/views/auth/login.blade.php&#10;crea&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/category/create.blade.php&#10;login&#9;FILE&#9;file://C:/exeam/exeam/resources/views/auth/login.blade.php&#10;si&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/sidebar/siderbar.blade.php&#10;edi&#9;FILE&#9;file://C:/exeam/exeam/resources/views/admin/product/edit.blade.php&#10;fe&#9;null&#9;null&#10;f&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php&#10;fo&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php&#10;head&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/header/header.blade.php&#10;app&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/app.blade.php&#10;foo&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php&#10;ho&#9;FILE&#9;file://C:/exeam/exeam/resources/views/home.blade.php&#10;footer&#9;FILE&#9;file://C:/exeam/exeam/resources/views/layouts/footer/footer.blade.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -420,18 +419,18 @@
       <workItem from="1558399587128" duration="26048000" />
       <workItem from="1558485975449" duration="29292000" />
       <workItem from="1558572302712" duration="470000" />
-      <workItem from="1558573118063" duration="17932000" />
+      <workItem from="1558573118063" duration="24445000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269998000" />
+    <option name="totallyTimeSpent" value="276511000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18344827" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23724137" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -461,31 +460,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/_alertMessages.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_22_010821_create_user_addresses_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/front.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserAddressController.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Front/UserAddressController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="106" column="28" selection-start-line="106" selection-start-column="28" selection-end-line="106" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/UserAddressesCreateAndEdit.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -504,13 +478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-611">
           <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/PermissionsServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="36" column="11" lean-forward="true" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -557,11 +524,6 @@
         <state relative-caret-position="-47">
           <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Front/MerchandiseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7273" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Front/merchandise/show.blade.php">
@@ -638,31 +600,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Front/order/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Front/cart/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="150" column="22" selection-start-line="150" selection-start-column="22" selection-end-line="150" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Policies/UserAddressPolicy.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -686,33 +627,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/component/card.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_20_083224_create_orders_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-987" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Entities/OrderItem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Entities/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3290">
-          <caret line="76" column="30" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="30" />
-          <folding>
-            <element signature="e#32#45#0#PHP" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Entities/Product.php">
@@ -764,17 +681,126 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Front/pay/website.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Front/order/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
+        <state relative-caret-position="1814">
           <caret line="118" column="39" lean-forward="true" selection-start-line="118" selection-start-column="39" selection-end-line="118" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/PermissionsServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="36" column="11" lean-forward="true" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/OrderItem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/CartItem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-556" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="25" column="48" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/component/card.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-462">
+          <caret line="1" column="15" lean-forward="true" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Front/merchandise/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="22" column="22" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Front/merchandise/favorites.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="21" column="78" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Front/MerchandiseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="169" column="38" selection-start-line="169" selection-start-column="38" selection-end-line="169" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2095">
+          <caret line="76" column="30" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="30" />
+          <folding>
+            <element signature="e#32#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Front/cart/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-940">
+          <caret line="105" column="1" selection-start-line="105" selection-start-column="1" selection-end-line="105" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/front.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="47" column="32" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="32" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Front/order/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="739">
+          <caret line="68" column="14" lean-forward="true" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/frontHeader/_header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="57" selection-start-column="57" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Front/OrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="45" column="42" lean-forward="true" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+        <state relative-caret-position="403">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
           <folding>
             <element signature="e#46#69#0#PHP" expanded="true" />
           </folding>
@@ -783,7 +809,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Events/OrderPaid.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
+        <state relative-caret-position="618">
           <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
           <folding>
             <element signature="e#30#66#0#PHP" expanded="true" />
@@ -793,28 +819,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Front/PaymentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="81">
+          <caret line="47" column="34" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="34" />
           <folding>
             <element signature="e#46#69#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="62" column="109" selection-start-line="62" selection-start-column="109" selection-end-line="62" selection-end-column="109" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Front/pay/website.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
         </state>
       </provider>
     </entry>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
     <div class="container">
         <a class="navbar-brand" href="">{{ config('app.name') }}</a>
 
@@ -26,8 +26,8 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a href="{{route('user_addresses.index')}}" class="dropdown-item">收件地址</a>
-                            <a href="" class="dropdown-item">我的訂單</a>
-                            <a href="" class="dropdown-item">我的收藏</a>
+                            <a href="{{route('orders.index')}}" class="dropdown-item">我的訂單</a>
+                            <a href="{{route('merchandise.favorites')}}" class="dropdown-item">我的收藏</a>
                             <div class="dropdown-divider"></div>
                             <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 登出

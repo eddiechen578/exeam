@@ -164,4 +164,9 @@ class MerchandiseController extends Controller
         $user->favoriteProducts()->detach($product);
         return [];
     }
+
+    public function favorites(Request $request){
+        $products = $request->user()->favoriteProducts()->paginate(16);
+        return view('Front.merchandise.favorites', ['products' => $products]);
+    }
 }

@@ -26,7 +26,7 @@ class CartService
     }
 
     public function remove($skuIds){
-        if(!is_array($skuIds)) $ids = [$skuIds];
-        Auth::user()->cartItems()->whereIn('product_sku_id', $ids)->delete();
+        if(!is_array($skuIds)) $skuIds = [$skuIds];
+        Auth::user()->cartItems()->whereIn('product_sku_id', $skuIds)->delete();
     }
 }

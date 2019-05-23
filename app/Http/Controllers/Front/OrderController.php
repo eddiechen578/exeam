@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Entities\UserAddress;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
+use App\Services\OrderService;
 class OrderController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -33,9 +36,11 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(OrderRequest $request)
+    public function store(OrderRequest $request, OrderService $orderService)
     {
-       return $request;
+       $user = $request->user();
+       $address = UserAddress::find($request->input('address_id'));
+       return $orderService->store($user, $address, $request->input('remark'),$request->input('items'));
     }
 
     /**

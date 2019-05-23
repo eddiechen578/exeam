@@ -56,5 +56,9 @@ Route::group(['namespace' => 'Front'], function (){
     Route::post('orders/{order}/review', 'OrderController@sendReview')->name('orders.review.store');
     Route::resource('orders', 'OrderController')->only(['index', 'store', 'show']);
 
+    Route::post('orders/{order}/apply_refund', 'OrderController@applyRefund')->name('orders.apply_refund');
     Route::resource('user_addresses', 'UserAddressController')->except('show');
+
+    Route::get('payment/{order}/website', 'PaymentController@payByWebsite')->name('payment.website');
+    Route::post('payment/website/notify', 'PaymentController@websiteNotify')->name('payment.website.notify');
 });

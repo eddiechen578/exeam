@@ -10,7 +10,6 @@
 
                 <div class="card-body">{{ $slot }}</div>
             @else
-                rrr
                 {{ $slot }}
             @endif
         </div>

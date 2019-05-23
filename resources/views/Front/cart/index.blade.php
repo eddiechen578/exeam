@@ -146,9 +146,9 @@
                    })
                });
                axios.post('{{ route('orders.store') }}', data).then(function (res) {
-                    // swal('訂單提交成功', '', 'success').then(function () {
-                    //     // location.href = '/orders/' + res.data.id
-                    // })
+                    swal('訂單提交成功', '', 'success').then(function () {
+                        location.href = '/orders/' + res.data.id
+                    })
                    console.log(res);
                 }).catch(function (error) {
                     if (error.response.status === 422) {

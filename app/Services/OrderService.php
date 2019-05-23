@@ -56,7 +56,7 @@ class OrderService{
             return $order;
         });
 
-        dispatch(new CloseOrder($order, config('app.order_tt1')));
+        dispatch(new CloseOrder($order, 10 * 60));
         return $order;
     }
 }

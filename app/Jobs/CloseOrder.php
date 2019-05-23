@@ -35,7 +35,7 @@ class CloseOrder implements ShouldQueue
     {
         if($this->order->paid_at) return;
 
-        DB:transaction(function (){
+        DB::transaction(function (){
             $this->order->update(['closed' => true]);
             foreach($this->order->orderItems as $item){
                 $item->productSku->addStock($item->amount);

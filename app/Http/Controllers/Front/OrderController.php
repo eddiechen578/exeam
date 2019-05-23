@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Entities\Order;
 use App\Entities\UserAddress;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
 use App\Services\OrderService;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 class OrderController extends Controller
 {
 
@@ -15,9 +18,13 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $orders = Order::with(['orderItems.product', 'orderItems.productSku'])
+            ->where('user_id', $request->user()->id)
+            ->orderBy('created_at', 'desc')
+            ->paginate();
+        return view('Front.orders.index', ['orders' => $orders]);
     }
 
     /**
@@ -51,7 +58,11 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::find($id);
+        $this->authorize('own', $order);
+        return view('Front.order.show', [
+                'order' => $order->load(['orderItems.productSku', 'orderItems.product'])
+            ]);
     }
 
     /**
@@ -86,5 +97,9 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function applyRefund(){
+
     }
 }

@@ -81,7 +81,7 @@
 
 @endsection
 @push('style')
-    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'></link>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
     <style>
         input[type='checkbox']:checked:after {
             font-family: FontAwesome;

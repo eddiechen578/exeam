@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Entities\Order;
 use App\Entities\UserAddress;
+use App\Exceptions\InvalidRequestException;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
@@ -101,7 +102,16 @@ class OrderController extends Controller
 
     public function review(Order $order)
     {
+        $this->authorize('own', $order);
 
+        if(!$order->paid_at)
+        {
+            throw new InvalidRequestException('該訂單未支付, 不可評價.');
+        }
+
+        return view('Front.order.review', [
+            'order' => $order->load(['orderItems.productSku', 'orderItems.product'])
+        ]);
     }
 
     public function applyRefund(){

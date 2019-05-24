@@ -48,7 +48,6 @@
                         @if($order->reviewed)
                             <span class="rating-star-yes">{{ str_repeat('★', $item->rating) }}</span><span class="rating-star-no">{{ str_repeat('★', 5 - $item->rating) }}</span>
                         @else
-                            <ul class="rate-area">
                                 {{--@for ($i = 5; $i >= 1; $i--)--}}
                                     {{--<input type="radio" id="{{ $i }}-star-{{ $index }}" name="reviews[{{ $index }}][rating]" value="{{ $i }}" {{ $i == 5 ? 'checked' : '' }} />--}}
                                     {{--<label for="{{ $i }}-star-{{ $index }}"></label>--}}
@@ -65,7 +64,6 @@
                                     <input type="checkbox" id="st5" value="5" />
                                     <label for="st5"></label>
                                 </div>
-                            </ul>
                         @endif
                     </td>
 
@@ -109,7 +107,7 @@
             display: inline-block;
             border: none;
             font-size: 14px;
-            margin: 50px auto;
+            margin: 20px 0px 20px 0px;
             left: 30%;
             transform: translateX(-50%);
         }

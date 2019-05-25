@@ -10,8 +10,8 @@
             <div class="d-flex justify-content-between">
                 {{-- 商品圖片 --}}
               <div class="col-md-6">
-                    <img class="cover" id="mainImg" src="{{ $product->image_url }}" alt="" width="200" height="200">
-                   <div class="row">
+                   <img class="cover" id="mainImg" src="{{ $product->image_url }}" alt="" width="200" height="200">
+                   <div class="row pt-3">
                        @foreach($product->featureds as $featured)
                        <div class="col-md-4">
                            <div class="thumbnail">

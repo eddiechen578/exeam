@@ -35,7 +35,6 @@ class UserAddressController extends Controller
      */
     public function create()
     {
-
         return view('Front.user_addresses.create_and_edit',[
             'address' => new UserAddress()
         ]);

@@ -4,7 +4,7 @@
 
 @section('content')
     @card
-        @slot('header', _('user_address.'.(!$address->id? 'create': 'edit')))
+        @slot('header', __('user_address.'.(!$address->id? 'create': 'edit')))
             @if (count($errors))
                 @foreach ($errors->all() as $error)
                     <div class="alert alert-danger">{{ $error }}</div>

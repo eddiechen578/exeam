@@ -44,7 +44,7 @@
                     </td>
 
                     {{-- 評分 --}}
-                    <td class="align-middle">
+                    <td class="align-middle pull-left">
                         @if($order->reviewed)
                             <span class="rating-star-yes">{{ str_repeat('★', $item->rating) }}</span><span class="rating-star-no">{{ str_repeat('★', 5 - $item->rating) }}</span>
                         @else
@@ -53,16 +53,15 @@
                                     {{--<label for="{{ $i }}-star-{{ $index }}"></label>--}}
                                 {{--@endfor--}}
                                 <div class="wrapper">
-                                    <input type="checkbox" id="st1" value="1" />
-                                    <label for="st1"></label>
-                                    <input type="checkbox" id="st2" value="2" />
-                                    <label for="st2"></label>
-                                    <input type="checkbox" id="st3" value="3" />
-                                    <label for="st3"></label>
-                                    <input type="checkbox" id="st4" value="4" />
-                                    <label for="st4"></label>
-                                    <input type="checkbox" id="st5" value="5" />
-                                    <label for="st5"></label>
+                                    @for($i = 5; $i >= 1; $i-- )
+                                    <input type="checkbox" id="{{ $i }}-star-{{ $index }}" name="reviews[{{ $index }}][rating]" value="{{ $i }}" />
+                                    <label for="{{ $i }}-star-{{ $index }}"></label>
+                                    @endfor
+                                    @if($errors->has("reviews.{$index}.rating"))
+                                            <div>
+                                                <span style="color: red">{{ $errors->first("reviews.{$index}.rating") }}</span>
+                                            </div>
+                                    @endif
                                 </div>
                         @endif
                     </td>

@@ -349,7 +349,7 @@
 
                 success: function(res){
                     console.log(res.status)
-                    window.location.href = "http://localhost:8080/admin/products";
+                    window.location.href = "http://localhost:8060/admin/products";
                 },
 
                 error: function(xhr, status, error) {

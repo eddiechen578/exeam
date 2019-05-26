@@ -40,7 +40,7 @@
             </li>
             <li><a href="{{route('users.index')}}"><i class="fa fa-user"></i> 顧客</a>
             </li>
-            <li><a><i class="fa fa-shopping-cart"></i> 訂單 </a>
+            <li><a href="{{route('adminOrder.index')}}"><i class="fa fa-shopping-cart"></i> 訂單 </a>
             </li>
             <li><a><i class="fa fa-trash"></i>垃圾桶 <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">

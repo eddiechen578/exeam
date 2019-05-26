@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::redirect('/', 'merchandise')->name('root');
+
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -34,6 +33,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin', 'namespace' => 'a
     Route::get('/categories/restore/{id}', 'CategoryController@restore')->name('categories.restore');
     Route::Resource('categories', 'CategoryController');
     Route::post('/featured/create', 'FeaturedController@store')->name('featured.store');
+    Route::Resource('adminOrder', 'AdminOrderController');
     Route::Resource('users', 'UserController');
     Route::Resource('roles', 'RoleController');
     Route::Resource('adminUsers', 'AdminUserController');

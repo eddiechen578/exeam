@@ -16,6 +16,7 @@ use App\Http\Requests\SendReviewRequest;
 use App\Events\OrderReviewed;
 use App\Http\Requests\ApplyRefundRequest;
 use App\Events\OrderRefund;
+use App\Notifications\OrderMadeNotification;
 class OrderController extends Controller
 {
 
@@ -53,7 +54,10 @@ class OrderController extends Controller
     {
        $user = $request->user();
        $address = UserAddress::find($request->input('address_id'));
-       return $orderService->store($user, $address, $request->input('remark'),$request->input('items'));
+       $order = $orderService->store($user, $address, $request->input('remark'),$request->input('items'));
+       $notifyOrder = Order::find($order->id);
+       $user->notify(new OrderMadeNotification($notifyOrder));
+       return $notifyOrder;
     }
 
     /**

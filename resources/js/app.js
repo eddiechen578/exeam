@@ -24,10 +24,11 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('SearchBar', SearchBar)
-Vue.component('ProductShow', ProductShow)
-Vue.component('SelectDistrict', SelectDistrict)
-Vue.component('UserAddressesCreateAndEdit', UserAddressesCreateAndEdit)
+Vue.component('SearchBar', SearchBar);
+Vue.component('ProductShow', ProductShow);
+Vue.component('SelectDistrict', SelectDistrict);
+Vue.component('UserAddressesCreateAndEdit', UserAddressesCreateAndEdit);
+Vue.component('Notification', require('./components/Notification.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

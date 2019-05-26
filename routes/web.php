@@ -63,4 +63,7 @@ Route::group(['namespace' => 'Front'], function (){
     Route::post('payment/website/notify', 'PaymentController@websiteNotify')->name('payment.website.notify');
     Route::post('orders/{order}/apply_refund', 'OrderController@applyRefund')->name('orders.apply_refund');
 
+    Route::post('notification/get', 'NotificationController@get')->name('notification.get');
+    Route::post('notification/read', 'NotificationController@read')->name('notification.read');
+
 });

@@ -16,9 +16,7 @@
                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
                 @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="">購物車</a>
-                    </li>
+                    <notification></notification>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="" class="user-avatar rounded-circle">

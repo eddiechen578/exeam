@@ -48,10 +48,10 @@
 
             var userId = $('meta[name="userId"]').attr('content');
 
-            Echo.private('App.User.' + userId).notification((notification)=>{
-                console.log(notification)
-                // this.notifications.push(notification);
-            });
+            // Echo.private('App.User.' + userId).notification((notification)=>{
+            //     console.log(notification)
+            //     // this.notifications.push(notification);
+            // });
         }
     }
 

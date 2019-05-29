@@ -38,4 +38,16 @@ class Product extends Model
 
         return "/upload/product_".$this->id.'/'.$this->featureds[0]->name;
     }
+
+    public function scopeFilterByCategories($builder){
+        if(request()->query('category')){
+            $category = Category::where('slug', request()->query('category'))
+                        ->first();
+            if($category){
+                $builder->where('category_id', $category->id);
+            }
+            return $builder;
+        }
+        return $builder;
+    }
 }

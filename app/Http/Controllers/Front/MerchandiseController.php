@@ -17,7 +17,7 @@ class MerchandiseController extends Controller
      */
     public function index(Request $request)
     {
-        $builder = Product::where('on_sale', 1);
+        $builder = Product::filterByCategories()->where('on_sale', 1);
 
         if($serach = $request->input('search', '')){
             $like = "%$serach%";

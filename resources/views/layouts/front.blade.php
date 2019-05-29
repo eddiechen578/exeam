@@ -14,15 +14,21 @@
 </head>
 <body>
 <div id="app">
+
     @include('layouts.frontHeader._header')
 
     <div id="alert-block"></div>
+    <main class="container-fluid">
 
-    <div class="container my-5">
-        @yield('content')
-    </div>
-
+        <div class="row">
+            @include('layouts.frontSidebar._sideBar')
+            <div class="col-lg-10 mt-3">
+                    @yield('content')
+            </div>
+        </div>
+    </main>
     @include('layouts.frontFooter._footer')
+
 </div>
 
 {{-- JS腳本 --}}
